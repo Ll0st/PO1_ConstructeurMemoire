@@ -22,7 +22,7 @@ namespace PO1_ConstructeurMemoire
 
         public override string? ToString()
         {
-            return base.ToString();
+            return Nom + " des " + Equipe.Nom;
         }
     }
 }

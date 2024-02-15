@@ -48,7 +48,9 @@ namespace PO1_ConstructeurMemoire
             }
             if (!erreur)
             {
-               ///???
+                Joueur nouveauJoueur = new Joueur(nomNouveauJoueur, equipeNouveauJoueur);
+                joueurs.Add(nouveauJoueur);
+                bindingSourceListboxJoueurs.ResetBindings(false);
             }
             
         }
@@ -56,7 +58,7 @@ namespace PO1_ConstructeurMemoire
         private void button_modifierEquipeNom_Click(object sender, EventArgs e)
         {
             bool erreur = false;
-            Equipe equipeAModifier;// ???
+            Equipe equipeAModifier = (Equipe)listBox_equipes.SelectedItem;
             if(equipeAModifier == null)
             {
                 errorProvider_modifierEquipe.SetError(listBox_equipes, "Veuillez choisir une équipe");
@@ -78,7 +80,10 @@ namespace PO1_ConstructeurMemoire
             }
             if (!erreur)
             {
-               //???
+                equipeAModifier.Nom = nouveauNomEquipe;
+                bindingSourceListboxEquipes.ResetBindings(false);
+                bindingSourceComboBoxEquipes.ResetBindings(false);
+                bindingSourceListboxJoueurs.ResetBindings(false);
             }
 
         }
